@@ -17,7 +17,7 @@ add_library(link_options INTERFACE)
 
 if(CMAKE_C_COMPILER_ID STREQUAL "GNU")
     set(LINK_OPTIONS
-        -T"${CMAKE_CURRENT_SOURCE_DIR}/implementation/microcontroller/${MICROCONTROLLER}/linker.ld"
+        -T${CMAKE_CURRENT_SOURCE_DIR}/implementation/microcontroller/${MICROCONTROLLER}/linker.ld
         -nostdlib
     )
 else()
