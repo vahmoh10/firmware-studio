@@ -16,9 +16,9 @@ endif()
 add_library(compile_options INTERFACE)
 
 if(CMAKE_C_COMPILER_ID STREQUAL "GNU")
-    set(COMPILE_OPTIONS -Wall -Wextra -Wpedantic -Werror -mcpu=${CPU})
+    set(COMPILE_OPTIONS -Wall -Wextra -Wpedantic -Werror -ffreestanding -mcpu=${CPU})
 else()
     message(FATAL_ERROR "${CMAKE_C_COMPILER_ID} is not supported")
 endif()
 
-target_link_options(compile_options INTERFACE ${COMPILE_OPTIONS})
+target_compile_options(compile_options INTERFACE ${COMPILE_OPTIONS})

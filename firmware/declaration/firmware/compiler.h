@@ -8,4 +8,16 @@
     #error "compiler is not supported"
 #endif
 
+#ifdef __GNUC__
+    #define FIRMWARE_SECTION(NAME) __attribute__((section(NAME)))
+#else
+    #define FIRMWARE_SECTION(NAME)
+#endif
+
+#ifdef __GNUC__
+    #define FIRMWARE_USED __attribute__((used))
+#else
+    #define FIRMWARE_USED
+#endif
+
 #endif
