@@ -6,7 +6,8 @@
 
 #include <stdint.h>
 
-typedef enum {
+typedef enum : uint8_t {
+    IO_BANK0_GPIO_CTRL_FUNCSEL_UART = 0x02,
     IO_BANK0_GPIO_CTRL_FUNCSEL_SIO = 0x05,
 } io_bank0_gpio_ctrl_funcsel_t;
 
