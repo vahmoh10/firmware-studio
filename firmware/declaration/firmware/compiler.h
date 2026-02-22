@@ -9,6 +9,12 @@
 #endif
 
 #ifdef __GNUC__
+    #define FIRMWARE_NAKED __attribute__((naked))
+#else
+    #define FIRMWARE_NAKED
+#endif
+
+#ifdef __GNUC__
     #define FIRMWARE_SECTION(NAME) __attribute__((section(NAME)))
 #else
     #define FIRMWARE_SECTION(NAME)

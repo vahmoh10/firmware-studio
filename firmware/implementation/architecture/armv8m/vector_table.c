@@ -14,4 +14,18 @@ FIRMWARE_USED
 const uintptr_t vector_table[] = {
     (uintptr_t)&stack_top,
     (uintptr_t)Reset_Handler,
+    (uintptr_t)Default_Handler,
+    (uintptr_t)Default_Handler,
+    (uintptr_t)Default_Handler,
+    (uintptr_t)Default_Handler,
+    (uintptr_t)Default_Handler,
+    0,
+    0,
+    0,
+    0,
+    (uintptr_t)Default_Handler,
+    (uintptr_t)Default_Handler,
+    0,
+    (uintptr_t)PendSV_Handler,
+    (uintptr_t)SysTick_Handler,
 };
