@@ -4,22 +4,23 @@
 #include <firmware/kernel/scheduler.h>
 
 #include <firmware/architecture/port.h>
-
 #include <firmware/kernel/type/task.h>
+#include <firmware/service/gpio.h>
+#include <firmware/service/uart.h>
 
-[[noreturn]]
-void run_idle_task(void) {
-    while (true) {
-    }
-}
-
-static uint8_t idle_task_stack[1024];
+static uint8_t gpio_stack[1024];
+static uint8_t uart_stack[1024];
 
 kernel_task_t tasks[] = {
     {
-        .entry = run_idle_task,
-        .stack_base = (uintptr_t *)idle_task_stack,
-        .stack_size = sizeof(idle_task_stack),
+        .entry = gpio_run,
+        .stack_base = (uintptr_t *)gpio_stack,
+        .stack_size = sizeof(gpio_stack),
+    },
+    {
+        .entry = uart_run,
+        .stack_base = (uintptr_t *)uart_stack,
+        .stack_size = sizeof(uart_stack),
     },
 };
 

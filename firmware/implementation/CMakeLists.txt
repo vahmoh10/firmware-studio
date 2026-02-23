@@ -5,6 +5,7 @@ add_subdirectory(architecture)
 add_subdirectory(driver)
 add_subdirectory(kernel)
 add_subdirectory(microcontroller)
+add_subdirectory(service)
 
 add_executable(firmware main.c)
 
