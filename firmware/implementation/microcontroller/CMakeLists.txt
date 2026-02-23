@@ -7,8 +7,6 @@ endif()
 
 add_library(microcontroller STATIC)
 
-target_include_directories(microcontroller PRIVATE ${MICROCONTROLLER}/declaration)
-
 target_link_libraries(microcontroller PRIVATE compile_options include_directories)
 
 add_subdirectory(${MICROCONTROLLER})

@@ -6,7 +6,7 @@
 
 #include <stdint.h>
 
-#define PADS_BANK0_GPIO_ISO_BIT (1u << 8)
+#define PADS_BANK0_GPIO_ISO_POSITION 8
 
 typedef struct {
     uint32_t VOLTAGE_SELECT;

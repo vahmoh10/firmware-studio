@@ -2,12 +2,13 @@
 # SPDX-License-Identifier: AGPL-3.0-only
 
 add_subdirectory(architecture)
+add_subdirectory(driver)
 add_subdirectory(kernel)
 add_subdirectory(microcontroller)
 
 add_executable(firmware main.c)
 
-target_link_libraries(firmware PRIVATE compile_options link_options architecture kernel microcontroller)
+target_link_libraries(firmware PRIVATE compile_options link_options architecture driver kernel microcontroller)
 
 set_target_properties(firmware PROPERTIES SUFFIX ".elf")
 

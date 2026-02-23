@@ -8,8 +8,8 @@
 
 #define UART_UARTFR_TXFF_POSITION 5
 #define UART_UARTCR_UARTEN_POSITION 0
-#define UART_UARTCR_WLEN_POSITION 5
-#define UART_UARTCR_WLEN_MASK 0x3u
+#define UART_UARTLCR_H_WLEN_POSITION 5
+#define UART_UARTLCR_H_WLEN_MASK 0x3u
 
 typedef enum : uint8_t {
     UART_UARTLCR_H_WLEN_5 = 0,
@@ -27,7 +27,7 @@ typedef struct {
     uint32_t UARTILPR;
     uint32_t UARTIBRD;
     uint32_t UARTFBRD;
-    uint32_t UARLCR_H;
+    uint32_t UARTLCR_H;
     uint32_t UARTCR;
 } uart_t;
 
